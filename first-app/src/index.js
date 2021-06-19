@@ -1,30 +1,34 @@
-// Import React and  ReactDOM
 import React from "react";
 import ReactDOM from "react-dom";
-import CommentDetail from "./CommentDetail";
+import CommendDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
+import faker from "faker";
 
-// Create a react component
 const App = () => {
   return (
-    <div className="ui">
-      <CommentDetail
-        author="Sam"
-        timeAgo="Today at 4:45PM"
-        comment="Nice post"
-      />
-      <CommentDetail
+    <div className="ui container comments">
+      <ApprovalCard>
+        <CommendDetail
+          author="Sam"
+          timeAgo="Today at 4:45PM"
+          commentText="Nice blog post!"
+          avatar={faker.image.avatar()}
+        />
+      </ApprovalCard>
+      <CommendDetail
         author="Alex"
-        timeAgo="Today at 6:00PM"
-        comment="Love it!"
+        timeAgo="Today at 2:00AM"
+        commentText="Love it!"
+        avatar={faker.image.avatar()}
       />
-      <CommentDetail
+      <CommendDetail
         author="Jane"
-        timeAgo="Yesterday at 8:20AM"
-        comment="Will share it with my friends"
+        timeAgo="Yesterday at 2:00PM"
+        commentText="Great!"
+        avatar={faker.image.avatar()}
       />
     </div>
   );
 };
 
-// Render a react component
 ReactDOM.render(<App />, document.querySelector("#root"));
